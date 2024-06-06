@@ -1,5 +1,5 @@
 const logo = document.querySelector('#leftSectionBox');
-const logoText = document.querySelector('#leftSection h1');
+const logoText = document.querySelector('#leftSection a h1');
 
 function logoAnime() {
   let tl = gsap.timeline();
@@ -65,7 +65,7 @@ function cursor() {
     crsr.animate({
       left: dets.pageX + "px",
       top: dets.pageY + "px",
-    }, { duration: 2500, fill: "forwards" });
+    }, { duration: 4500, fill: "forwards" });
   })
 
   container.addEventListener("mousemove", function (dets) {
@@ -101,7 +101,7 @@ function mainTextGsap() {
       trigger: mainContainerText1,
       start: 'top 0%',
       end: 'top 150%',
-      scrub: 2
+      scrub: 2,
     }
   })
 
@@ -131,9 +131,93 @@ function mainTextGsap() {
         scrub: 2,
       }
     })
+
+    tl.to(mainPage2Text, {
+      display: 'none',
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        scroller: 'body',
+        trigger: '#secondPage',
+        start: 'top 0%',
+        end: 'top 150%',
+        scrub: 2,
+      }
+    })
+
+    tl.to(mainPage2Text2, {
+      display: 'none',
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        scroller: 'body',
+        trigger: '#secondPage',
+        start: 'top 0%',
+        end: 'top 150%',
+        scrub: 2,
+      }
+    })
+
+    tl.to('main', {
+      display: 'none',
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        scroller: 'body',
+        trigger: '#thirdPage',
+        start: 'top 0%',
+        end: 'top 150%',
+        scrub: 2,
+      }
+    })
   }
 
   page2();
 }
 
 mainTextGsap();
+
+function thirdPage() {
+  const pageh1 = document.querySelector('#thirdPageContainer h1');
+  const pageh2 = document.querySelector('#thirdPageContainer h2');
+
+  let tl = gsap.timeline();
+
+  tl.from(pageh1, {
+    x: -1500,
+    opacity: 0,
+    scrollTrigger: {
+      scroller: 'body',
+      trigger: '#thirdPageContainer #thirdRight',
+      start: 'top 80%',
+      end: 'top 50%',
+      scrub: 2,
+    }
+  })
+
+  tl.from(pageh2, {
+    x: -1000,
+    opacity: 0,
+    scrollTrigger: {
+      scroller: 'body',
+      trigger: '#thirdPageContainer #thirdRight',
+      start: 'top 80%',
+      end: 'top 50%',
+      scrub: 4,
+    }
+  })
+
+  tl.from('#thirdRight', {
+    x: 1000,
+    opacity: 0,
+    scrollTrigger: {
+      scroller: 'body',
+      trigger: '#thirdPageContainer #thirdRight',
+      start: 'top 80%',
+      end: 'top 50%',
+      scrub: 4,
+    }
+  })
+}
+
+thirdPage();
