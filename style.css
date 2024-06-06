@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "chakra", sans-serif;
-  cursor: none;
 }
 
 html,
@@ -121,6 +120,14 @@ nav #navContainer {
   overflow: hidden;
   backdrop-filter: blur(8px);
   background-color: rgba(255, 255, 255, 0.25);
+}
+
+#leftSection a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 #leftSection #leftSectionBox {
@@ -292,6 +299,7 @@ main #mainContainer {
   width: 100%;
   height: 100%;
   position: absolute;
+  box-shadow: inset 0vw 0vw 15vw black;
 }
 
 #mainContainer #page1 {
@@ -342,6 +350,7 @@ main #mainContainer {
   height: 20%;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -370,7 +379,6 @@ main #mainContainer {
 /* Main Bg */
 
 main #mainBg {
-  /* opacity: 0.25; */
   width: 100%;
   height: 100%;
   position: absolute;
@@ -431,6 +439,10 @@ video {
 /* Landingpage responsive */
 
 @media (max-width: 600px) {
+  #landingPage nav {
+    height: 10%;
+  }
+
   #leftSection h1 {
     font-size: 3.25vw;
   }
@@ -459,12 +471,12 @@ video {
     display: none;
   }
 
-  #mainContainer h1 {
-    font-size: 20vw;
+  #mainContainer #page1 h1 {
+    font-size: 25vw;
   }
 
-  #mainContainer h1::before {
-    font-size: 19.5vw;
+  #mainContainer #page1 h1::before {
+    font-size: 24.5vw;
   }
 }
 
@@ -488,4 +500,185 @@ video {
   background-position: top;
   background-repeat: no-repeat;
   scale: 1.2;
+}
+
+/* Third Page */
+
+#container #thirdPage {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Thirdpage Container */
+
+#thirdPage #thirdPageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  padding: 5vw 10vw;
+  background-color: transparent;
+  box-shadow: inset 0vw 0vw 25vw black;
+}
+
+#thirdPageContainer #thirdLeft {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  gap: 1vw;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#thirdLeft #ContainerText {
+  overflow: hidden;
+}
+
+#thirdPageContainer h1 {
+  color: white;
+  font-size: 2vw;
+  font-weight: 700; 
+  text-transform: uppercase;
+}
+
+#thirdPageContainer h1 span {
+  color: red;
+  font-size: 3vw;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#thirdPageContainer h2 {
+  color: white;
+  font-size: 3.5vw;
+  font-weight: 500;
+}
+
+#thirdPageContainer h3 {
+  font-size: 1.5vw;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#thirdPageContainer #ContainerP {
+  width: 60%;
+}
+
+#thirdPageContainer #ContainerP p {
+  color: white;
+  font-size: 1.75vw;
+  font-weight: 100;
+}
+
+#thirdPageContainer #icons {
+  padding: 2vw 0vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#icons a {
+  text-decoration: none;
+}
+
+#icons a button {
+  width: 80%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+  text-transform: uppercase;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  padding: 0.5vw 1vw;
+  border: 0vw;
+  transition: all ease 0.65s;
+  cursor: pointer;
+  box-shadow: inset 0vw 0vw 0.95vw rgba(255, 255, 255, 0.25);
+  outline: 0.025vw solid white;
+}
+
+#icons a button:hover {
+  outline: 0.25vw solid red;
+  box-shadow: inset 0vw 0vw 0.95vw rgba(255, 0, 0);
+}
+
+button img {
+  width: 15%;
+  height: 100%;
+}
+
+button p {
+  color: white;
+  font-size: 1.25vw;
+  font-weight: 500;
+  transition: all 0.3s linear;
+}
+
+button:hover p {
+  color: red;
+}
+
+#thirdPageContainer #thirdRight {
+  width: 40%;
+  height: 55%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#thirdRight img {
+  width: 100%;
+  border-radius: 2vw;
+  border: 0.5vw solid white;
+  animation: thirdRightImg 2s linear infinite alternate;
+  transition: all ease 0.65s;
+}
+
+#thirdRight img:hover {
+  border: 0vw;
+  box-shadow: 0vw 0vw 1vw white;
+}
+
+/* Keyframe Img */
+
+@keyframes thirdRightImg {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  50% {
+    transform: translate(2.5%, 2.5%);
+  }
+
+  100% {
+    transform: translate(5%, 5%);
+  }
+}
+
+/* Thirdpage Bg */
+
+#thirdPage #thirdPageBg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: -8;
+  background-color: black;
+  box-shadow: inset 0vw 0vw 25vw black;
+}
+
+#thirdPageBg video {
+  width: 100%;
+  height: 100%;
+  scale: 0.9;
 }
