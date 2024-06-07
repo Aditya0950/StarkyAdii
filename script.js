@@ -139,9 +139,9 @@ function mainTextGsap() {
       scrollTrigger: {
         scroller: 'body',
         trigger: '#secondPage',
-        start: 'top 0%',
-        end: 'top 150%',
-        scrub: 2,
+        start: 'top -10%',
+        end: 'top 70%',
+        scrub: 2
       }
     })
 
@@ -152,9 +152,9 @@ function mainTextGsap() {
       scrollTrigger: {
         scroller: 'body',
         trigger: '#secondPage',
-        start: 'top 0%',
-        end: 'top 150%',
-        scrub: 2,
+        start: 'top -10%',
+        end: 'top 70%',
+        scrub: 2
       }
     })
 
