@@ -14,8 +14,11 @@ body {
 /* Slider */
 
 body::-webkit-scrollbar {
-  width: 0vw;
-  display: none;
+  width: 0.25vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray;
 }
 
 /* Fonts */
@@ -56,7 +59,7 @@ body::-webkit-scrollbar {
   position: relative;
 }
 
-/* Cursor */
+/* cursor */
 
 #container #cursor {
   width: 2.5vw;
@@ -66,13 +69,13 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   position: absolute;
+  z-index: 10;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
   outline: 0.0025vw solid white;
-  z-index: 8;
 }
 
 #cursor #cursorDot {
@@ -82,451 +85,352 @@ body::-webkit-scrollbar {
   background-color: white;
 }
 
-/* First Page */
+/* landingPage */
 
 #container #landingPage {
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   position: relative;
-  overflow: hidden;
 }
 
-/* landing page nav */
-
-#landingPage nav {
+#landingPage header {
   width: 100%;
-  height: 15%;
-  display: flex;
+  height: 5.5vw;
   position: fixed;
-  align-items: center;
-  justify-content: center;
+  z-index: 9;
+  padding: 1.5vw 1.25vw 0vw 1.25vw;
   background-color: transparent;
-  z-index: 100;
-  margin-top: 0.5vw;
 }
 
-nav #navContainer {
-  width: 97%;
-  height: 50%;
+header nav {
+  width: 100%;
+  height: 100%;
   display: flex;
-  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
 }
 
-#navContainer #leftSection {
+nav #navLeft {
   width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: start;
   overflow: hidden;
   backdrop-filter: blur(8px);
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-#leftSection a {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-#leftSection #leftSectionBox {
+#navLeft #leftLogo {
   width: 10%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
   background-color: white;
   box-shadow: 0.25vw 0vw 0.85vw white;
 }
 
-#leftSectionBox span {
+#navLeft #leftLogo span {
   color: black;
   font-size: 1.75vw;
   font-weight: 900;
   font-family: "chakra";
 }
 
-#leftSection h1 {
+#navLeft p {
   opacity: 0;
   color: White;
-  font-size: 1.25vw;
+  font-size: 1.5vw;
   font-weight: 100;
+  font-family: "chakra";
   letter-spacing: 0.25vw;
   text-transform: uppercase;
   margin-left: 2.75vw;
-  font-family: "chakra";
   text-shadow: 0vw 0.15vw 0.95vw white, 0vw -0.15vw 0.95vw white;
 }
 
-#navContainer #secondSection {
-  width: 25%;
+nav #navRight {
+  width: 50%;
   height: 100%;
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(5px);
-  overflow-y: hidden;
-  box-shadow: inset -16px 7px 75px -47px rgba(255, 255, 255, 1);
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0);
 }
 
-#secondSection:hover a {
-  color: black;
-  text-shadow: 0vw 0.15vw 0.95vw rgba(0, 0, 0, 0.6),
-    0vw -0.15vw 0.95vw rgba(0, 0, 0, 0.6);
-}
-
-#secondSection:hover P {
-  color: black;
-}
-
-#secondSection::after {
-  content: "";
-  width: 100%;
+#navRight .rightBox {
+  width: 50%;
   height: 100%;
-  top: 100%;
-  position: absolute;
-  mix-blend-mode: difference;
-  background-color: white;
-  transition: all ease 0.4s;
-  z-index: -9;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  text-decoration: none;
 }
 
-#secondSection:hover::after {
+#navRight .rightBox:hover::after {
   top: 0%;
 }
 
-#secondSection a {
+#navRight .rightBox::after {
+  content: '';
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 500;
-  font-size: 0.85vw;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-shadow: 0vw 0.15vw 0.95vw rgba(255, 255, 255, 0.6),
-    0vw -0.15vw 0.95vw rgba(255, 255, 255, 0.6);
+  position: absolute;
+  top: 100%;
+  mix-blend-mode: difference;
+  transition: all ease 0.4s;
+  background-color: white;
 }
 
-#secondSection p {
+.rightBox h2 {
+  font-weight: 700;
+  font-size: 1.25vw;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0vw 0.15vw 0.95vw rgba(255, 255, 255, 0.6), 0vw -0.15vw 0.95vw rgba(255, 255, 255, 0.6);
+}
+
+.rightBox p {
   color: white;
   font-size: 0.5vw;
   font-weight: 400;
   position: absolute;
-  left: 2%;
-  bottom: 10%;
+  left: 3.5%;
+  bottom: 15%;
 }
 
-#navContainer #thirdSection {
-  width: 25%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(5px);
-  overflow-y: hidden;
-  box-shadow: inset -16px 7px 75px -47px rgba(255, 255, 255, 1);
+#navRight #rightFirst {
+  border-right: 0.025vw solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset -0.5vw 0vw 1vw rgba(255, 255, 255, 0.25);
 }
 
-#thirdSection:hover a {
-  color: black;
-  text-shadow: 0vw 0.15vw 0.95vw rgba(0, 0, 0, 0.6),
-    0vw -0.15vw 0.95vw rgba(0, 0, 0, 0.6);
+#navRight #rightSecond {
+  box-shadow: inset 0.5vw 0vw 1vw rgba(255, 255, 255, 0.25);
+  box-shadow: inset -0.5vw 0vw 1vw rgba(255, 255, 255, 0.25);
 }
 
-#thirdSection:hover P {
-  color: black;
-}
-
-#thirdSection::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: 100%;
-  position: absolute;
-  mix-blend-mode: difference;
-  background-color: white;
-  transition: all ease 0.4s;
-  z-index: -9;
-}
-
-#thirdSection:hover::after {
-  top: 0%;
-}
-
-#thirdSection a {
+#landingPage #overlay {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-weight: 500;
-  font-size: 0.85vw;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-shadow: 0vw 0.15vw 0.95vw rgba(255, 255, 255, 0.6),
-    0vw -0.15vw 0.95vw rgba(255, 255, 255, 0.6);
-}
-
-#thirdSection p {
-  color: white;
-  font-size: 0.5vw;
-  font-weight: 400;
   position: absolute;
-  left: 2%;
-  bottom: 10%;
-}
-
-/* landingPage Main */
-
-#landingPage main {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: 10;
+  z-index: 2;
   background-color: #111111c4;
-}
-
-main #mainContainer {
-  width: 100%;
-  height: 100%;
-  position: absolute;
   box-shadow: inset 0vw 0vw 15vw black;
 }
 
-#mainContainer #page1 {
+#overlay #overlayCenter {
+  width: 48.75%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-left: 0.025vw solid rgba(255, 255, 255, 0.1);
+  border-right: 0.025vw solid rgba(255, 255, 255, 0.1);
+}
+
+#overlayCenter #overLine {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  border-right: 0.025vw solid rgba(255, 255, 255, 0.15);
+}
+
+#overLine img {
+  width: 100%;
+  position: relative;
+  top: 45%;
+}
+
+/* firstPage */
+
+#landingPage #firstPage {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#firstPage #firstPageContainer {
   width: 100%;
   height: 100%;
   position: absolute;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#page1 h1 {
+#firstPageContainer h1 {
   color: black;
   font-size: 15vw;
   font-weight: 200;
   letter-spacing: 1vw;
   text-transform: uppercase;
-  z-index: 10;
   -webkit-text-stroke: 1px gray;
 }
 
-#page1 h1::before {
-  content: "Aditya";
+#firstPageContainer h1::after {
+  content: 'Aditya';
   color: white;
+  font-size: 14.5vw;
+  font-weight: 200;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 14.5vw;
-  font-weight: 200;
   letter-spacing: 1vw;
   text-transform: uppercase;
+  -webkit-text-stroke: 1px gray;
 }
 
-/* Main Page 2 */
+/* firstPageBg */
 
-#mainContainer #page2 {
+#firstPage #firstPageBg {
   width: 100%;
   height: 100%;
-  display: flex;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
-#page2Container {
-  width: 90%;
-  height: 20%;
+#firstPageBg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  scale: 1.15;
+}
+
+/* secondPage */
+
+#landingPage #secondPage {
+  width: 100%;
+  height: 100vh;
   position: relative;
+}
+
+#secondPage #secondPageContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-#page2Container h1 {
+#secondPageContainer h1 {
   color: black;
   font-size: 15vw;
   font-weight: 200;
   letter-spacing: 1vw;
   text-transform: uppercase;
-  z-index: 10;
   -webkit-text-stroke: 1.5px white;
 }
 
-#page2Container h2 {
+#secondPageContainer h2 {
   color: white;
+  position: absolute;
   font-size: 5vw;
   font-weight: 200;
   letter-spacing: 1vw;
   text-transform: uppercase;
-  position: absolute;
   padding-top: 12vw;
-  z-index: 10;
 }
 
-/* Main Bg */
+/* secondPageBg */
 
-main #mainBg {
+#secondPage #secondPageBg {
   width: 100%;
   height: 100%;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  overflow: hidden;
 }
 
-#mainBg .boxElem {
-  width: 33.35%;
-  height: 100%;
-  position: relative;
-}
-
-#mainBg #boxElemMiddle {
-  width: 62.75%;
-  height: 100%;
-  display: flex;
-}
-
-#boxElemMiddle .middleBoxElem {
-  width: 50%;
-  height: 100%;
-  position: relative;
-  border-left: 0.0025vw solid rgba(255, 255, 255, 0.5);
-  border-right: 0.0025vw solid rgba(255, 255, 255, 0.5);
-}
-
-.middleBoxElem #middleBottom {
-  width: 100%;
-  height: 10%;
-  position: relative;
-  top: 90%;
-  background: url(Assets/Lines.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* landingPage Bg */
-
-#landingPage #landingPageBg {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  z-index: -9;
-}
-
-#landingPageBg img,
-video {
+#secondPageBg img {
   width: 100%;
   height: 100%;
-  position: absolute;
   object-fit: cover;
   object-position: center;
   scale: 1.15;
 }
 
-/* Landingpage responsive */
+/* Responsive of LandingPage */
 
 @media (max-width: 600px) {
-  #landingPage nav {
-    height: 10%;
+  #landingPage header {
+    height: 10.5vw;
   }
 
-  #leftSection h1 {
-    font-size: 3.25vw;
-  }
-
-  #leftSection #leftSectionBox {
+  #navLeft #leftLogo {
     width: 20%;
   }
 
-  #leftSectionBox span {
-    font-size: 3.75vw;
+  #navLeft #leftLogo span {
+    font-size: 2.75vw;
   }
 
-  #secondSection a {
+  #navLeft p {
     font-size: 2.5vw;
   }
 
-  #thirdSection a {
-    font-size: 2.5vw;
+  .rightBox h2 {
+    font-size: 2.25vw;
   }
 
-  #secondSection p {
+  .rightBox p {
+    opacity: 0;
     display: none;
   }
 
-  #thirdSection p {
-    display: none;
-  }
-
-  #mainContainer #page1 h1 {
+  #firstPageContainer h1 {
     font-size: 25vw;
   }
 
-  #mainContainer #page1 h1::before {
+  #firstPageContainer h1::after {
     font-size: 24.5vw;
+  }
+
+  /* secondPage */
+
+  #secondPageContainer h1 {
+    font-size: 17vw;
+  }
+
+  #secondPageContainer h2 {
+    font-size: 7vw;
   }
 }
 
-/* Second Page */
+/* aboutPage*/
 
-#container #secondPage {
+#container #about {
   width: 100%;
   height: 100vh;
   position: relative;
-  overflow: hidden;
-  z-index: 1;
 }
 
-#secondPage #secondPageBg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -9;
-  background-image: url(Assets/iron\ man\ full\ suit.png);
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-  scale: 1.2;
-}
-
-/* Third Page */
-
-#container #thirdPage {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/* Thirdpage Container */
-
-#thirdPage #thirdPageContainer {
+#about #aboutContainer {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: absolute;
-  padding: 5vw 10vw;
-  background-color: transparent;
-  box-shadow: inset 0vw 0vw 25vw black;
+  z-index: 1;
+  overflow: hidden;
+  padding: 7.5vw 10.5vw;
+  box-shadow: inset 0vw 0vw 15vw black;
 }
 
-#thirdPageContainer #thirdLeft {
+#aboutContainer #aboutLeft {
   width: 60%;
   height: 100%;
   display: flex;
@@ -534,61 +438,70 @@ video {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-}
-
-#thirdLeft #ContainerText {
   overflow: hidden;
+  padding: 0vw 0.25vw;
 }
 
-#thirdPageContainer h1 {
+#aboutLeft #leftTop {
+  width: 100%;
+}
+
+#leftTop h3 {
   color: white;
   font-size: 2vw;
-  font-weight: 700; 
+  font-weight: 700;
   text-transform: uppercase;
+  transition: all ease 0.4s;
 }
 
-#thirdPageContainer h1 span {
+#leftTop h3:hover {
+  color: red;
+}
+
+#leftTop span {
   color: red;
   font-size: 3vw;
   font-weight: 700;
   text-transform: uppercase;
+  transition: all ease 0.4s;
 }
 
-#thirdPageContainer h2 {
+#leftTop h3:hover span {
+  color: white;
+}
+
+#leftTop h2 {
   color: white;
   font-size: 3.5vw;
   font-weight: 500;
 }
 
-#thirdPageContainer h3 {
-  font-size: 1.5vw;
-  font-weight: 700;
-  text-transform: uppercase;
+#aboutLeft #leftMiddle {
+  width: 65%;
 }
 
-#thirdPageContainer #ContainerP {
-  width: 60%;
-}
-
-#thirdPageContainer #ContainerP p {
+#leftMiddle p {
   color: white;
   font-size: 1.75vw;
   font-weight: 100;
+  text-wrap: nowrap;
 }
 
-#thirdPageContainer #icons {
+#aboutLeft #icons {
   padding: 2vw 0vw;
   display: flex;
+  gap: 2.5vw;
   align-items: center;
   justify-content: flex-start;
 }
 
 #icons a {
+  width: 37.5%;
   text-decoration: none;
 }
 
 #icons a button {
-  width: 80%;
+  width: 100%;
   color: white;
   display: flex;
   align-items: center;
@@ -610,6 +523,10 @@ video {
   box-shadow: inset 0vw 0vw 0.95vw rgba(255, 0, 0);
 }
 
+#icons a button:hover p {
+  color: red;
+}
+
 button img {
   width: 15%;
   height: 100%;
@@ -622,34 +539,29 @@ button p {
   transition: all 0.3s linear;
 }
 
-button:hover p {
-  color: red;
-}
-
-#thirdPageContainer #thirdRight {
+#aboutContainer #aboutRight {
   width: 40%;
-  height: 55%;
+  height: 100%;
   display: flex;
   align-items: center;
-  position: relative;
 }
 
-#thirdRight img {
+#aboutRight img {
   width: 100%;
   border-radius: 2vw;
   border: 0.5vw solid white;
-  animation: thirdRightImg 2s linear infinite alternate;
+  animation: aboutRightImg 2s linear infinite alternate;
   transition: all ease 0.65s;
 }
 
-#thirdRight img:hover {
+#aboutRight img:hover {
   border: 0vw;
   box-shadow: 0vw 0vw 1vw white;
 }
 
-/* Keyframe Img */
+/* Img anime */
 
-@keyframes thirdRightImg {
+@keyframes aboutRightImg {
   0% {
     transform: translate(0%, 0%);
   }
@@ -663,22 +575,77 @@ button:hover p {
   }
 }
 
-/* Thirdpage Bg */
+/* aboutBg */
 
-#thirdPage #thirdPageBg {
+#about #aboutBg {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: absolute;
-  z-index: -8;
+  z-index: 0;
+  padding: 2.5vw 4.5vw;
   background-color: black;
-  box-shadow: inset 0vw 0vw 25vw black;
 }
 
-#thirdPageBg video {
+#aboutBg video {
   width: 100%;
   height: 100%;
-  scale: 0.9;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* about Responsive */
+
+@media (max-width:600px) {
+  #about #aboutContainer {
+    flex-direction: column;
+  }
+
+  #aboutContainer #aboutLeft {
+    width: 100%;
+    height: 40%;
+    order: 1;
+    gap: 5vw;
+  }
+
+  #aboutContainer #aboutRight {
+    width: 80%;
+    height: 60%;
+  }
+
+  #leftTop h3 {
+    font-size: 5vw;
+  }
+
+  #leftTop span {
+    font-size: 6vw;
+  }
+
+  #leftTop h2 {
+    font-size: 6.5vw;
+  }
+
+  #aboutLeft #leftMiddle {
+    width: 90%;
+  }
+
+  #leftMiddle p {
+    font-size: 4.25vw;
+  }
+
+  #aboutLeft #icons {
+    gap: 7.5vw;
+    justify-content: center;
+  }
+
+  #icons a {
+    width: 45%;
+  }
+
+  #icons a button {
+    width: 100%;
+  }
+
+  button p {
+    font-size: 3.25vw;
+  }
 }
