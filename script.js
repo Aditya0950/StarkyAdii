@@ -48,7 +48,7 @@ function navAnime() {
   })
 }
 
-// navAnime();
+navAnime();
 
 function cursor() {
   const crsr = document.querySelector('#container #cursor');
