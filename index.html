@@ -11,85 +11,73 @@
 
 <body>
     <div id="container">
+        <div id="cursor">
+            <div id="cursorDot" style="left: 1316px; top: 406px;"></div>
+        </div>
+
         <div id="landingPage">
-            <nav>
-                <div id="navContainer">
-                    <div id="leftSection">
-                        <a href="#">
-                            <div id="leftSectionBox">
-                                <span>AD</span>
-                            </div>
-
-                            <h1>Aditya Kumar</h1>
+            <header>
+                <nav>
+                    <div id="navLeft">
+                        <a href="#" id="leftLogo">
+                            <span>AD</span>
                         </a>
-                    </div>
 
-                    <div id="secondSection" class="navSection">
-                        <a href="#thirdPage">
+                        <p>Aditya Kumar</p>
+                    </div>
+                    <div id="navRight">
+                        <a href="#about" id="rightFirst" class="rightBox">
                             <h2>About</h2>
                             <p>002</p>
                         </a>
-                    </div>
 
-                    <div id="thirdSection" class="navSection">
-                        <a href="">
+                        <a href="" id="rightSecond" class="rightBox">
                             <h2>Projects</h2>
                             <p>003</p>
                         </a>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </header>
 
-            <main>
-                <div id="mainContainer">
-                    <div id="page1">
-                        <h1>Aditya</h1>
-                    </div>
-
-                    <div id="page2">
-                        <div id="page2Container">
-                            <h1>Frontend</h1>
-                            <h2>Developer</h2>
-                        </div>
+            <div id="overlay">
+                <div id="overlayCenter">
+                    <div id="overLine">
+                        <img src="Assets/Lines.svg" alt="Design-Element">
                     </div>
                 </div>
+            </div>
 
-                <div id="mainBg">
-                    <div class="boxElem"></div>
-                    <div class="boxElem" id="boxElemMiddle">
-                        <div class="middleBoxElem"></div>
-                        <div class="middleBoxElem">
-                            <div id="middleBottom"></div>
-                        </div>
-                    </div>
-                    <div class="boxElem"></div>
+            <div id="firstPage">
+                <div id="firstPageContainer">
+                    <h1>Aditya</h1>
                 </div>
-            </main>
 
+                <div id="firstPageBg">
+                    <video src="Assets/video.mp4" autoplay loop muted></video>
+                </div>
+            </div>
 
-            <div id="landingPageBg">
-                <video src="Assets/video.mp4" autoplay loop muted></video>
+            <div id="secondPage">
+                <div id="secondPageContainer">
+                    <h1>Frontend</h1>
+                    <h2>Developer</h2>
+                </div>
+
+                <div id="secondPageBg">
+                    <img src="Assets/iron man full suit.png" alt="IronMan-Bg">
+                </div>
             </div>
         </div>
 
-        <div id="secondPage">
-            <div id="secondPageBg"></div>
-        </div>
-
-        <div id="thirdPage">
-            <div id="thirdPageContainer">
-                <div id="thirdLeft">
-                    <div id="ContainerText">
-                        <h1>Welcome to my
-                            <span>
-                                Portfolio!
-                            </span>
-                        </h1>
+        <div id="about">
+            <div id="aboutContainer">
+                <div id="aboutLeft">
+                    <div id="leftTop">
+                        <h3>Welcome to my <span>Portfolio</span></h3>
                         <h2>It's Aditya</h2>
-                        <h3>Frontend Developer</h3>
                     </div>
 
-                    <div id="ContainerP">
+                    <div id="leftMiddle">
                         <p>Here, I showcase my passion for</p>
                         <p>front-end development and design,</p>
                         <p>crafting digital experiences that</p>
@@ -99,35 +87,30 @@
                     <div id="icons">
                         <a href="https://www.linkedin.com/in/Aditya-95-Kumar" target="_blank">
                             <button>
-                                <img src="Assets/linkedin-box-fill.svg" alt="linkedinLogo">
+                                <img src="Assets/linkedin-box-fill.svg" alt="LinkedIn-Icon">
                                 <p>LinkedIn</p>
                             </button>
                         </a>
 
                         <a href="https://github.com/Aditya0950" target="_blank">
                             <button>
-                                <img src="Assets/github-fill.svg" alt="githubLogo">
+                                <img src="Assets/github-fill.svg" alt="Github-Icon">
                                 <p>GitHub</p>
                             </button>
                         </a>
                     </div>
                 </div>
 
-                <div id="thirdRight">
-                    <img src="Assets/Logo.png" alt="Aditya-Logo">
+                <div id="aboutRight">
+                    <img src="Assets/Logo.png" alt="Aditya's-Logo">
                 </div>
             </div>
 
-            <div id="thirdPageBg">
+            <div id="aboutBg">
                 <video src="Assets/net_grid.mp4" autoplay loop muted></video>
             </div>
         </div>
-
-        <div id="cursor">
-            <div id="cursorDot"></div>
-        </div>
     </div>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
