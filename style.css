@@ -519,6 +519,7 @@ nav #navRight {
 }
 
 #icons a button:hover {
+  scale: 0.95;
   outline: 0.25vw solid red;
   box-shadow: inset 0vw 0vw 0.95vw rgba(255, 0, 0);
 }
@@ -548,15 +549,16 @@ button p {
 
 #aboutRight img {
   width: 100%;
-  border-radius: 2vw;
   border: 0.5vw solid white;
+  border-radius: 50%;
   animation: aboutRightImg 2s linear infinite alternate;
   transition: all ease 0.65s;
+  box-shadow: 0vw 0vw 5vw white;
 }
 
 #aboutRight img:hover {
-  border: 0vw;
-  box-shadow: 0vw 0vw 1vw white;
+  border-radius: 0%;
+  scale: 0.85;
 }
 
 /* Img anime */
