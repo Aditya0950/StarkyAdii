@@ -11,6 +11,10 @@ body {
   height: 100%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* Slider */
 
 body::-webkit-scrollbar {
@@ -72,10 +76,15 @@ body::-webkit-scrollbar {
   z-index: 10;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(50%, -50%);
+  transition: all ease 0.3s;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
   outline: 0.0025vw solid white;
+}
+
+#cursor #cursorText p {
+  font-size: 1vw;
 }
 
 #cursor #cursorDot {
@@ -417,6 +426,269 @@ nav #navRight {
   position: relative;
 }
 
+/* about Hover */
+
+#about #aboutHover {
+  width: 85%;
+  height: 75%;
+  display: none;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-300%, -50%);
+  z-index: 2;
+  backdrop-filter: blur(20px);
+  background-color: #111111c4;
+  box-shadow: 0vw 0vw 2vw white;
+}
+
+#aboutHover #hoverContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: inset 0vw 0vw 15vw black;
+}
+
+#hoverContainer #hoverLeft {
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 0%;
+  transition: all ease 0.65s;
+  box-shadow: 0.25vw 0vw 0.85vw white;
+  background-image: url(Assets/Lines.svg);
+  background-position: center;
+  background-size: contain;
+}
+
+#hoverLeft:hover {
+  border: 0.5vw solid white;
+}
+
+#hoverLeft img {
+  width: 100%;
+  cursor: pointer;
+  transition: all ease 0.65s;
+}
+
+#hoverLeft img:hover {
+  scale: 1.25;
+}
+
+#hoverContainer #hoverRight {
+  width: 60%;
+  height: 100%;
+  color: white;
+  display: flex;
+  gap: 1.5vw;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1vw 1.5vw;
+}
+
+#hoverRight #hoverRightTop {
+  display: flex;
+  flex-direction: column;
+}
+
+#hoverRightTop h1 {
+  color: white;
+  font-size: 2.5vw;
+  font-weight: 700;
+}
+
+#hoverRightTop h1 span {
+  color: red;
+  font-size: 2.75vw;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#hoverRightTop #topSkills {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  gap: 1vw;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1.5vw;
+}
+
+#topSkills button {
+  height: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+  text-transform: uppercase;
+  background-color: red;
+  padding: 0.85vw 1vw;
+  border: 0vw;
+  border-radius: 2vw;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  box-shadow: 0vw 0vw 0.95vw rgba(255, 0, 0);
+}
+
+#topSkills button p {
+  color: white;
+  font-size: 0.75vw;
+  font-weight: 500;
+}
+
+#topSkills button img {
+  width: 15%;
+  height: 100%;
+}
+
+#topSkills button:hover {
+  background-color: white;
+  box-shadow: 0vw 0vw 0.95vw black;
+}
+
+#topSkills button:hover p {
+  color: black;
+}
+
+#hoverRightMiddle p {
+  color: white;
+  font-size: 1.75vw;
+  font-weight: 100;
+}
+
+#hoverRight #hoverRightIcon {
+  width: 80%;
+  display: flex;
+  gap: 0.5vw;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2vw 0vw;
+}
+
+#hoverRightIcon button {
+  width: 37.5%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  gap: 0.5vw;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  padding: 0.85vw 1vw;
+  border: 0vw;
+  font-size: 0.85vw;
+  font-weight: 500;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  box-shadow: inset 0vw 0vw 0.95vw rgba(255, 255, 255, 0.25);
+  outline: 0.025vw solid white;
+}
+
+#hoverRightIcon #iconGmail:hover::after {
+  top: 0%;
+}
+
+#hoverRightIcon #iconGmail::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  mix-blend-mode: difference;
+  transition: all ease 0.4s;
+  background-color: white;
+}
+
+#hoverRightIcon #iconMail {
+  outline: 0vw;
+  background-color: red;
+  box-shadow: 0vw 0vw 0.95vw rgba(255, 0, 0);
+}
+
+/* hoverBg */
+
+#aboutHover #hoverBg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  padding: 2.5vw 4.5vw;
+}
+
+/* hover responsive */
+
+@media (max-width: 600px) {
+  #about #aboutHover {
+    height: 85%;
+  }
+
+  #aboutHover #hoverContainer {
+    flex-direction: column;
+  }
+
+  #hoverContainer #hoverLeft {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #hoverLeft img {
+    width: 90%;
+  }
+
+  #hoverContainer #hoverRight {
+    width: 90%;
+    gap: 1.25vw;
+  }
+
+  #hoverRightTop h1 {
+    font-size: 3.5vw;
+  }
+
+  #hoverRightTop h1 span {
+    font-size: 3.75vw;
+  }
+
+  #hoverRightTop #topSkills {
+    gap: 1.45vw;
+  }
+
+  #topSkills button {
+    padding: 1.85vw 1.75vw;
+  }
+
+  #topSkills button p {
+    font-size: 1.75vw;
+  }
+
+  #hoverRightMiddle p {
+    font-size: 2.75vw;
+  }
+
+  #hoverRight #hoverRightIcon {
+    width: 100%;
+    gap: 1.5vw;
+  }
+
+  #hoverRightIcon button {
+    width: 100%;
+    gap: 1.5vw;
+    font-size: 2.25vw;
+  }
+}
+
+/* aboutContainer */
+
 #about #aboutContainer {
   width: 100%;
   height: 100%;
@@ -443,7 +715,7 @@ nav #navRight {
 }
 
 #aboutLeft #leftTop {
-  width: 100%;
+  width: 60%;
 }
 
 #leftTop h3 {
@@ -488,11 +760,12 @@ nav #navRight {
 }
 
 #aboutLeft #icons {
-  padding: 2vw 0vw;
+  width: 80%;
   display: flex;
   gap: 2.5vw;
   align-items: center;
   justify-content: flex-start;
+  padding: 2vw 0vw;
 }
 
 #icons a {
@@ -549,6 +822,7 @@ button p {
 
 #aboutRight img {
   width: 100%;
+  cursor: pointer;
   border: 0.5vw solid white;
   border-radius: 50%;
   animation: aboutRightImg 2s linear infinite alternate;
@@ -615,7 +889,7 @@ button p {
   }
 
   #leftTop h3 {
-    font-size: 5vw;
+    font-size: 3.5vw;
   }
 
   #leftTop span {
@@ -623,7 +897,7 @@ button p {
   }
 
   #leftTop h2 {
-    font-size: 6.5vw;
+    font-size: 4.5vw;
   }
 
   #aboutLeft #leftMiddle {
