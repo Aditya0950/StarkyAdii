@@ -73,6 +73,57 @@ function cursor() {
 
 cursor();
 
+function cursorClick(elem) {
+  const crsr = document.querySelector('#container #cursor');
+  const crsrDot = document.querySelector('#cursor #cursorDot');
+  const crsrP = document.querySelector('#cursor #cursorText p');
+
+  elem.addEventListener('mouseenter', () => {
+    crsr.style.scale = 2;
+    crsr.style.backdropFilter = 'blur(5px)';
+    crsrDot.style.display = 'none';
+    crsrP.textContent = 'Click';
+  })
+
+  elem.addEventListener('mouseleave', () => {
+    crsr.style.scale = 1;
+    crsr.style.backdropFilter = 'blur(0px)';
+    crsrDot.style.display = 'block';
+    crsrP.textContent = '';
+  })
+}
+
+cursorClick(document.querySelector('#aboutRight img'));
+cursorClick(document.querySelector('#hoverLeft img'));
+
+function cursorWidth(widthElem) {
+  const crsr = document.querySelector('#container #cursor');
+
+  widthElem.addEventListener('mouseenter', () => {
+    let elemWidth = widthElem.offsetWidth;
+    let elemHeight = widthElem.offsetHeight;
+
+    widthElem.style.cursor = 'none';
+    crsr.style.width = elemWidth + 'px';
+    crsr.style.height = elemHeight + 'px';
+    crsr.style.borderRadius = '0%';
+    crsr.style.transform = 'translate(-50%, -50%)';
+  })
+
+  widthElem.addEventListener('mouseleave', () => {
+    widthElem.style.cursor = 'default';
+    crsr.style.width = '2.5vw';
+    crsr.style.height = '2.5vw';
+    crsr.style.borderRadius = '50%';
+    crsr.style.transform = 'translate(-50%, 75%)';
+  })
+}
+
+cursorWidth(document.querySelector('#firstPageContainer h1'));
+cursorWidth(document.querySelector('#secondPageContainer h2'));
+cursorWidth(document.querySelector('#leftTop span'));
+cursorWidth(document.querySelector('#hoverRightTop h1 span'));
+
 function secondPageAnime() {
   let tl = gsap.timeline();
 
@@ -139,3 +190,29 @@ function thirdPage() {
 }
 
 thirdPage();
+
+function aboutPageHover() {
+  const aboutImg = document.querySelector('#aboutRight img ');
+  const aboutHover = document.querySelector('#about #aboutHover');
+  let tl = gsap.timeline();
+
+  const hoverImg = document.querySelector('#hoverLeft img');
+
+  aboutImg.addEventListener('click', () => {
+    tl.to(aboutHover, {
+      opacity: 1,
+      display: 'block',
+      transform: 'translate(-50%, -50%)',
+    })
+  })
+
+  hoverImg.addEventListener('click', () => {
+    tl.to(aboutHover, {
+      opacity: 0,
+      display: 'none',
+      transform: 'translate(-300%, -50%)',
+    })
+  })
+}
+
+aboutPageHover();
